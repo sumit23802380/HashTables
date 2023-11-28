@@ -16,6 +16,7 @@ public class Main {
             }
             frequencyOfWord.add(word , wordFrequency);
         }
+        frequencyOfWord.remove("avoidable");
         frequencyOfWord.display();
     }
 }

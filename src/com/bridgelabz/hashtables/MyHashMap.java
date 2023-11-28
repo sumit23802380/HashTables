@@ -1,5 +1,4 @@
 package com.bridgelabz.hashtables;
-
 public class MyHashMap <K ,V>{
     private static final int SIZE = 10;
 //    MyMapNodeLinkedList<K,V> [] myMapNodeLinkedList;
@@ -25,6 +24,10 @@ public class MyHashMap <K ,V>{
         else{
             myMapNode.setValue(value);
         }
+    }
+    public void remove(K key){
+        int hashCode = Math.abs(key.hashCode())%SIZE;
+        this.myMapNodeLinkedList[hashCode].remove(key);
     }
     public void display(){
         for(int i=0;i<SIZE;i++){

@@ -42,6 +42,26 @@ public class MyLinkedList <K,V>{
      *@params :
      *@return :
      */
+    /*
+     *@desc : deletes the particular searchvalue if it is present in linked list
+     *@params : Generic searchValue
+     *@return :
+     */
+    public void remove(K key){
+        if(head.key.equals(key)){
+            head = head.next;
+            return;
+        }
+        MyMapNode<K,V> temp = head;
+        while(temp.next!=null){
+            if(temp.next.key.equals(key)){
+                temp.next = temp.next.next;
+                return;
+            }
+            temp = temp.next;
+        }
+    }
+
     public void display(){
         MyMapNode<K,V> temp = head;
         while (temp!=null){
