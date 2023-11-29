@@ -7,7 +7,7 @@ public class MyLinkedList <K,V>{
     public  MyMapNode<K,V> head;
     /*
      *@desc : add the new node at the end of linked list
-     *@params : Generic data
+     *@params : Generic key and value
      *@return :
      */
     public void append(K key , V value){
@@ -23,9 +23,9 @@ public class MyLinkedList <K,V>{
         temp.next = newNode;
     }
     /*
-     *@desc : search the particular value in the linked list present or not
-     *@params : Generic value
-     *@return : boolean that it is present in linked list or not
+     *@desc : search the particular value in the linked list
+     *@params : Generic key
+     *@return : mapnode if key exists else null
      */
     public MyMapNode<K,V> search(K key){
         MyMapNode<K,V> temp = head;
@@ -38,13 +38,8 @@ public class MyLinkedList <K,V>{
         return null;
     }
     /*
-     *@desc : prints the linked list
-     *@params :
-     *@return :
-     */
-    /*
-     *@desc : deletes the particular searchvalue if it is present in linked list
-     *@params : Generic searchValue
+     *@desc : deletes the particular key if it is present in linked list
+     *@params : Generic key
      *@return :
      */
     public void remove(K key){
@@ -61,7 +56,11 @@ public class MyLinkedList <K,V>{
             temp = temp.next;
         }
     }
-
+    /*
+        @desc : prints the linked-list
+        @params :
+        @return :
+     */
     public void display(){
         MyMapNode<K,V> temp = head;
         while (temp!=null){
